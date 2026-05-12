@@ -94,5 +94,3 @@ if __name__ == "__main__":
 
     encoder = Encoder(filename)
     encoder.encode(output_file)
-
-

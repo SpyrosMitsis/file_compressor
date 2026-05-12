@@ -57,7 +57,7 @@ class BitWriter(object): # "(object)" present to be Python2/3-agnostic
         self.flush()
         self.output.close()
         
-    def writebit(self, bit):
+    def writebit(self, bit: int) -> None:
         # if a full byte has accumulated, write it out to file
         # and reset accumulater to all 0's:
         if self.bcount == 8:
@@ -72,7 +72,7 @@ class BitWriter(object): # "(object)" present to be Python2/3-agnostic
             self.writebit(bits & 1 << n-1)
             n -= 1
  
-    def writeint32bits(self, intvalue):
+    def writeint32bits(self, intvalue: int) -> None:
         self._writebits(intvalue, 32)
 
     def flush(self):
